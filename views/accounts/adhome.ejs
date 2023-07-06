@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="/photos/logo.jpeg">
+    <title>Velvet Homes</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            scroll-behavior: smooth;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        body {
+            background-color: #ffcc99;
+            /* background-image: url('https://t4.ftcdn.net/jpg/04/59/32/89/360_F_459328912_oLIjD5EIUOpaNHojcnHbkvcN0J0YABCZ.jpg');
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size: 100% 100%; */
+        }
+
+        .head {
+            width: 95%;
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .totalbus {
+            /* background-color: #fff; */
+            width: 450px;
+            height: 250px;
+            /* background-color: #fff; */
+            background-image: url('https://w0.peakpx.com/wallpaper/146/516/HD-wallpaper-black-texture-with-purple-neon-lines-black-abstract-background-purple-neon-lines-3d-black-background-3d-polygons-texture.jpg');
+            background-repeat: no-repeat;
+            /* background-attachment: fixed; */
+            background-size: 100% 100%;
+            border-radius: 15px;
+            display: flex;
+            justify-content: space-evenly;
+            align-items: flex-start;
+            flex-direction: column;
+            margin-top: 100px;
+            box-shadow: 8px 10px 10px rgba(0, 0, 0, 0.621);
+        }
+
+        .div2:nth-of-type(1) {
+            background-image: url('https://cdn.vectorstock.com/i/preview-1x/88/92/abstract-metallic-red-black-frame-layout-design-vector-34848892.jpg');
+        }
+
+        .div2:nth-of-type(2) {
+            background-image: url('https://static.vecteezy.com/system/resources/previews/001/987/871/original/abstract-black-stripes-diagonal-background-free-vector.jpg');
+        }
+
+        .totalbus:nth-of-type(2) {
+            background-image: url('https://img.freepik.com/premium-vector/tech-dark-design-with-perforated-metal-texture_43969-796.jpg');
+        }
+
+        .totalbus:nth-of-type(3) {
+            background-image: url('https://images.unsplash.com/photo-1636953056323-9c09fdd74fa6?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxleHBsb3JlLWZlZWR8MXx8fGVufDB8fHx8&w=1000&q=80');
+        }
+
+        @media(max-width: 1420px) {
+            .totalbus:nth-of-type(3) {
+                margin-top: 15px;
+            }
+        }
+
+        @media(max-width: 501px) {
+            .totalbus {
+                width: 80%;
+            }
+        }
+
+        @media(max-width: 281px) {
+            .totalbus {
+                height: 300px;
+            }
+        }
+
+        @media (max-width: 948px) {
+            .totalbus:nth-of-type(2) {
+                margin-top: 15px;
+            }
+
+        }
+
+        .tex-title {
+            font-size: 30px;
+            color: silver;
+            margin: 10px;
+            /* color: #fff; */
+        }
+
+        .tex-con {
+            font-size: 40px;
+            color: silver;
+            /* color: #fff; */
+            text-align: center;
+            margin: 10px;
+        }
+
+        .add {
+            font-size: 30px;
+            color: silver;
+            /* color: #fff; */
+        }
+
+        .div2 {
+            width: 450px;
+            height: 250px;
+            /* background-color: #333; */
+            background-image: url('https://www.ibm.com/content/dam/connectedassets-adobe-cms/worldwide-content/other/ul/g/90/34/90341b6b-a78f-404d-a77d50a280840189.component.xl.ts=1642246835787.png/content/adobe-cms/us/en/topics/oltp/_jcr_content/root/leadspace');
+            background-repeat: no-repeat;
+            /* background-attachment: fixed; */
+            background-size: 100% 100%;
+            border-radius: 15px;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            flex-direction: column;
+            margin-top: 5px;
+            box-shadow: 8px 10px 10px rgba(0, 0, 0, 0.621);
+        }
+
+        @media(max-width: 501px) {
+            .div2 {
+                width: 80%;
+            }
+        }
+
+        .line2 {
+            width: 100%;
+            margin-top: 5px;
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .graph {
+            width: 900px;
+            height: 500px;
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+            flex-direction: column;
+            /* background-color: rgba(0, 255, 255, 0.409); */
+            background-image: url('https://static.vecteezy.com/system/resources/previews/020/712/364/original/abstract-shapes-gold-lines-on-black-background-minimalist-luxury-abstract-background-golden-lines-on-dark-modern-geometric-shapes-free-vector.jpg');
+            background-repeat: no-repeat;
+            /* background-attachment: fixed; */
+            background-size: 100% 100%;
+            margin: 20px;
+            box-shadow: 8px 10px 10px rgba(0, 0, 0, 0.621);
+            border-radius: 15px;
+        }
+
+        .div2-con {
+            display: flex;
+            justify-content: space-evenly;
+            height: 525px;
+            flex-direction: column;
+            align-items: flex-start;
+        }
+
+        .main {
+            width: 70%;
+            height: 80%;
+            border-bottom: 3px solid #828282;
+            border-left: 3px solid #828282;
+            display: flex;
+            justify-content: space-evenly;
+            align-items: flex-end;
+        }
+
+        .grtotalbus {
+            width: 15%;
+            height: 98%;
+            opacity: 1;
+            background-color: gold;
+            border: 3px solid silver;
+            border-bottom: none;
+            font-size: x-large;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+
+        .accbal {
+            width: 15%;
+            background-color: #2249ca;
+            border: 3px solid silver;
+            border-bottom: none;
+            font-size: x-large;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            height: <%=98 - account.accountbal%>%;
+        }
+
+        .pd {
+            width: 15%;
+            background-color: darkgreen;
+            border: 3px solid silver;
+            border-bottom: none;
+            font-size: x-large;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            height: <%=98 - account.paywithdelivery %>%;
+        }
+
+        .cd {
+            width: 15%;
+            background-color: rgb(219, 14, 14);
+            border: 3px solid silver;
+            border-bottom: none;
+            font-size: x-large;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            height: <%=98 - account.companytotalpaypen%>%;
+        }
+
+        .description {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .div-con {
+            display: flex;
+            align-items: center;
+            background-color: #aaa;
+            margin: 2px;
+            width: 200px;
+        }
+
+        .strip {
+            width: 100%;
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+        }
+
+        .strip img {
+            height: 50px;
+            width: 50px;
+            border-radius: 5px;
+            margin: 0 30px;
+        }
+
+        .master {
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            height: 50px;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .master img {
+            width: 100px;
+            height: 90%;
+            margin-right: 20px;
+        }
+
+        .accnum {
+            margin-left: 20px;
+            font-size: larger;
+            color: silver;
+        }
+
+        @media (max-width: 1463px) {
+            .div2-con {
+                width: 100%;
+                flex-direction: row;
+                flex-wrap: wrap;
+                height: 275px;
+            }
+        }
+
+        @media (max-width: 948px) {
+            .div2-con {
+                height: 510px;
+            }
+        }
+
+        @media (max-width : 450px) {
+            .master {
+                display: none;
+            }
+        }
+
+        .navbar {
+            height: 80px;
+            width: 100%;
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+            background-color: #996633;
+            margin-top: 0;
+            position: fixed;
+            border-top: 3px solid gold;
+            border-bottom: 3px solid gold;
+            transition: 0.1s;
+        }
+
+        .navbar a {
+            width: 20%;
+            height: 70%;
+        }
+
+        .options {
+            width: 100%;
+            height: 100%;
+            border-radius: 10px;
+            background-color: #eaac6e;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            font-size: x-large;
+        }
+
+        .options:hover {
+            background-color: #d2a67a;
+            /* color: ; */
+        }
+
+        h2 {
+            text-align: center;
+            width: 50%;
+            background-color: rgb(206, 188, 88);
+            font-size: 30px;
+            color: #FF004D;
+            border: 1px solid black;
+        }
+
+        .h2-con {
+            display: flex;
+            justify-content: center;
+            margin: 30px auto;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="navbar" id="nav">
+        <a href="#section1">
+            <div class="options">Analyse Accounts</div>
+        </a>
+        <a href="#section2">
+            <div class="options">Clear Payments</div>
+        </a>
+        <a href="#section3">
+            <div class="options">Collect Payments</div>
+        </a>
+    </div>
+    <div class="head" id="section1">
+        <div class="totalbus">
+            <div class="tex-title">Total Business Done : </div>
+            <div class="strip">
+                <img src="/photos/tiles/atm_strip.png" alt="">
+                <div class="tex-con"><span>Rs. </span>
+                    <%= account.totalbusiness %>
+                </div>
+            </div>
+            <div class="master">
+                <div class="accnum">
+                    1234 XXXX XXXX 7890
+                </div>
+                <img src="/photos/tiles/master.png" alt="">
+            </div>
+        </div>
+        <div class="totalbus">
+            <div class="tex-title">Balance In Account : </div>
+            <div class="strip">
+                <img src="/photos/tiles/atm_strip.png" alt="">
+                <div class="tex-con"><span>Rs. </span>
+                    <%= account.accountbal %>
+                </div>
+            </div>
+            <div class="master">
+                <div class="accnum">
+                    1234 XXXX XXXX 7890
+                </div>
+                <img src="/photos/tiles/master.png" alt="">
+            </div>
+        </div>
+        <div class="totalbus">
+            <div class="tex-title">Pending Payments : <div class="add">( Money With Delivery Dept. )</div>
+            </div>
+            <div class="strip">
+                <img src="/photos/tiles/atm_strip.png" alt="">
+                <div class="tex-con"><span>Rs. </span>
+                    <%= account.paywithdelivery %>
+                </div>
+            </div>
+            <div class="master">
+                <div class="accnum">
+                    1234 XXXX XXXX 7890
+                </div>
+                <img src="/photos/tiles/master.png" alt="">
+            </div>
+        </div>
+        <div class="line2">
+            <div class="div2-con">
+                <div class="div2 hid">
+                    <div class="tex-title">Number Of Companies : <div class="add">(With Payment Pending)
+                        </div>
+                    </div>
+                    <div class="strip">
+                        <img src="/photos/tiles/atm_strip.png" alt="">
+                        <div class="tex-con">
+                            <%= account.npp %>
+                        </div>
+                    </div>
+                    <div class="master">
+                        <div class="accnum">
+                            1234 XXXX XXXX 7890
+                        </div>
+                        <img src="/photos/tiles/master.png" alt="">
+                    </div>
+                </div>
+                <div class="div2">
+                    <div class="tex-title">Pending Payments : <div class="add">(Debt To Be Cleared To Company)</div>
+                    </div>
+                    <div class="strip">
+                        <img src="/photos/tiles/atm_strip.png" alt="">
+                        <div class="tex-con"><span>Rs. </span>
+                            <%= account.companytotalpaypen %>
+                        </div>
+                    </div>
+                    <div class="master">
+                        <div class="accnum">
+                            1234 XXXX XXXX 7890
+                        </div>
+                        <img src="/photos/tiles/master.png" alt="">
+                    </div>
+                </div>
+            </div>
+            <div class="graph">
+                <div class="main">
+                    <div class="grtotalbus">
+                        Rs. <%= account.totalbusiness %>
+                    </div>
+                    <div class="accbal">
+
+                        Rs. <%= account.accountbal %>
+                    </div>
+                    <div class="pd">
+                        <br>
+                        Rs. <%= account.paywithdelivery %>
+                    </div>
+                    <div class="cd">
+                        <br> Rs. <%= account.companytotalpaypen %>
+                    </div>
+                </div>
+                <div class="description">
+                    <div class="div-con">
+                        <div
+                            style="height: 20px; width: 20px; background-color: gold; margin: 2px; border: 2px solid black;">
+
+                        </div>
+                        Total Business
+                    </div>
+                    <div class="div-con">
+                        <div
+                            style="height: 20px; width: 20px; background-color: #2249ca; margin: 2px; border: 2px solid black;">
+                        </div>
+                        Account Balance
+                    </div>
+                    <div class="div-con">
+                        <div
+                            style="height: 20px; width: 20px; background-color: darkgreen; margin: 2px; border: 2px solid black;">
+                        </div>
+                        Paymnet With Delivery
+                    </div>
+                    <div class="div-con">
+                        <div
+                            style="height: 20px; width: 20px; background-color: rgb(219, 14, 14); margin: 2px; border: 2px solid black;">
+                        </div>
+                        Debt To Be Cleared
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <div id="section2">
+        <div class="h2-con">
+            <h2>List Of Companies Of Whose Payment To Be Cleared</h2>
+        </div>
+    </div>
+    <div id="section3">
+        <div class="h2-con">
+            <h2>List Of Payment To Be Collected From Delivery Dept.</h2>
+        </div>
+    </div>
+</body>
+<script>
+    window.onscroll = function () { scrollFunction() };
+
+    function scrollFunction() {
+        if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) {
+            document.getElementById("nav").style.height = "50px";
+        } else {
+            document.getElementById("nav").style.height = "80px";
+        }
+    }
+</script>
+
+</html>

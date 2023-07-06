@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Velvet Homes</title>
+    <link rel="icon" type="image/x-icon" href="/photos/logo.jpeg">
+    <link rel="stylesheet" href="/css/cart.css">
+    <link rel="stylesheet" href="/navbar.css">
+    <link rel="stylesheet" href="/footer.css">
+</head>
+<body>
+    <%- include('header') %>
+    <% let val = 0 %>
+    <% let dis = 0 %>
+    <div class="main-con">
+        <div class="left">
+            <div class="head">Velvet Homes (Cart)</div>
+            <%for(let object of customer.cart){%>
+            <div class="obj">
+                <div class="pro-img">
+                    <img src="<%= object.dispimg %>" alt="">
+                </div>
+                <div class="obj-body">
+                    <div class="title"><%= object.title %></div>
+                    <div class="price">Rs. <%= object.price %>/-</div>
+                    <div class="rm-btn-con">
+                            <form action="/velvethomes/cart/remove/<%= object._id %>" method="post">
+                                <button class="rm-btn">Remove</button>
+                            </form>
+                    </div>
+                </div>
+            </div>
+            <% val += object.price %>
+            <% dis += 100 %>
+            <% } %>
+        </div>
+        <div class="right">
+            <div class="right-head">Price Details</div>
+            <div class="item-price">
+                Product Cost : <span>₹<%= val %></span>
+            </div>
+            <div class="item-price">Delivery Charges <span>Free</span></div>
+            <div class="item-price">Discount : <span>₹-<%= dis %></span>
+            </div>
+            <div class="total">
+                Total Amount: <span>₹<%= val - dis %></span>
+            </div>
+            <div class="placeorder">
+                <form action="/velvethomes/cart/placeallorder" method="post">
+                    <button>Place Order</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    <%- include('footer') %>
+    <script src="/navbar.js"></script>
+</body>
+</html>

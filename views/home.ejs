@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Velvet Homes</title>
+    <link rel="icon" type="image/x-icon" href="/photos/logo.jpeg">
+    <link rel="stylesheet" href="/navbar.css">
+    <link rel="stylesheet" href="footer.css">
+    <script defer src="https://friconix.com/cdn/friconix-0.2538.js"> </script>
+    <link rel="stylesheet" href="home.css">
+
+    <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous"> -->
+</head>
+
+<body>
+
+    <%- include('header') %>
+    <div class="vidcon">
+        <video autoplay muted loop plays-inline id="homevideo">
+            <source src="photos/h2.mp4" type="video/mp4">
+        </video>
+    </div>
+    <h1 style="color: maroon;">Shop, Design, Love Your Home</h1>
+    <h2 class="head">Tiles</h2>
+    <div class="bigcon">
+        <div class="container">
+            <% for(let tile of homed.tiles){ %>
+                <div class="card">
+                    <img src="<%= tile.dispimg %>" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <a href="/velvethomes/buyproduct/<%= tile._id %>" class="btn">Buy Now</a>
+                    </div>
+                </div>
+                <% } %>
+        </div>
+        
+        <div class="advertise">
+            <img src="/photos/tiles/10.png" class="adver adver-right" alt="">
+            <div class="overlay">
+                <div class="text">
+                    <div><img src="/photos/logo.jpeg" alt=""></div>
+                    <div>Velvet Homes</div>
+                    <div>( Tiles )</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <a href="/velvethomes/prodsubcat/tile">
+        <button class="custom-btn btn-1 left-btn">See More</button>
+    </a>
+
+
+    <h2 class="head heading-furniture">Furniture</h2>
+    <div class="bigcon">
+        <div class="advertise">
+            <img src="/photos/furniture/7.jpeg" class="adver adver-left" alt="">
+            <div class="overlay-left">
+                <div class="text">
+                    <div><img src="/photos/logo.jpeg" alt=""></div>
+                    <div>Velvet Homes</div>
+                    <div>( Furniture )</div>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <% for(let tile of homed.furniture){ %>
+                <div class="card">
+                    <img src="<%= tile.dispimg %>" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <a href="/velvethomes/buyproduct/<%= tile._id %>" class="btn">Buy Now</a>
+                    </div>
+                </div>
+                <% } %>
+        </div>
+    </div>
+    <a href="/velvethomes/prodsubcat/furniture">
+        <button class="custom-btn btn-1 right-btn">See More</button>
+    </a>
+
+
+    <h2 class="head heading-furniture">Sanitary</h2>
+    <div class="bigcon">
+        <div class="container">
+            <% for(let tile of homed.sanitary){ %>
+                <div class="card">
+                    <img src="<%= tile.dispimg %>" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <a href="/velvethomes/buyproduct/<%= tile._id %>" class="btn">Buy Now</a>
+                    </div>
+                </div>
+                <% } %>
+            
+        </div>
+        <div class="advertise">
+            <img src="/photos/Sanitary/4.jpg" class="adver adver-right" alt="">
+            <div class="overlay">
+                <div class="text">
+                    <div><img src="/photos/logo.jpeg" alt=""></div>
+                    <div>Velvet Homes</div>
+                    <div>( Sanitary )</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <a href="/velvethomes/prodsubcat/sanitary">
+        <button class="custom-btn btn-1 left-btn">See More</button>
+    </a>
+
+
+    <h2 class="head heading-furniture">Artifacts</h2>
+    <div class="bigcon">
+        <div class="advertise">
+            <img src="/photos/artifacts/7.jpeg" class="adver adver-left" alt="">
+            <div class="overlay-left">
+                <div class="text">
+                    <div><img src="/photos/logo.jpeg" alt=""></div>
+                    <div>Velvet Homes</div>
+                    <div>( Artifacts )</div>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <% for(let tile of homed.artifacts){ %>
+                <div class="card">
+                    <img src="<%= tile.dispimg %>" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <a href="/velvethomes/buyproduct/<%= tile._id %>" class="btn">Buy Now</a>
+                    </div>
+                </div>
+                <% } %>
+        </div>
+    </div>
+    <a href="/velvethomes/prodsubcat/artifacts/6443b0f9beadc2f7c0bf035a">
+        <button class="custom-btn btn-1 right-btn">See More</button>
+    </a>
+
+
+    <h2 class="head heading-furniture">Paints</h2>
+    <div class="bigcon">
+        <div class="container">
+            <% for(let tile of homed.paints){ %>
+                <div class="card">
+                    <img src="<%= tile.dispimg %>" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <a href="/velvethomes/buyproduct/<%= tile._id %>" class="btn">Buy Now</a>
+                    </div>
+                </div>
+                <% } %>
+            
+        </div>
+        <div class="advertise">
+            <img src="/photos/paints/12.jpg" class="adver adver-right" alt="">
+            <div class="overlay">
+                <div class="text">
+                    <div><img src="/photos/logo.jpeg" alt=""></div>
+                    <div>Velvet Homes</div>
+                    <div>( Paints )</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <a href="/velvethomes/prodsubcat/paints/6443b0f9beadc2f7c0bf035a">
+        <button class="custom-btn btn-1 left-btn bottom-btn">See More</button>
+    </a>
+    <%- include('footer') %>
+    <script src="navbar.js"></script>
+    <script>
+        const toggleButton = document.getElementsByClassName('toggle-button')[0]
+        const navbarlinks = document.getElementsByClassName('navbar-links')[0]
+
+        toggleButton.addEventListener('click', () => {
+            navbarlinks.classList.toggle('active')
+        })
+        const bttns = document.getElementsByClassName('btn');
+        bttns.addEventListener('mouseover', () => {
+            bttns.classList.toggle('btn-danger');
+            bttns.classList.toggle('btn-primary');
+        })
+        // const navbar = document.getElementsByClassName('navbar')[0]
+        // navbar.addEventListener('mouseover', () => {
+        //     if (navbarlinks.classList.contains('active')) {
+        //         navbarlinks.classList.toggle('active');
+        //     }
+        // })
+        // document.body.addEventListener('click', function () {
+        //     if (navbarlinks.classList.contains('active')) {
+        //         navbarlinks.classList.toggle('active');
+        //     }
+        // })
+    </script>
+    <!-- <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
+        integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"
+        integrity="sha384-mQ93GR66B00ZXjt0YO5KlohRA5SY2XofN4zfuZxLkoj1gXtW8ANNCe9d5Y3eG5eD"
+        crossorigin="anonymous"></script> -->
+</body>
+
+</html>

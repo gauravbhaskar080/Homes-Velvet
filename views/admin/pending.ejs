@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pending Payments</title>
+  </head>
+
+  <style>
+
+
+  @import url('https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap');
+
+
+/* CSS for card look */
+body {
+  background-color: rgb(212, 137, 72);
+  font-family: 'Roboto Mono', monospace;
+}
+
+
+.card {
+
+  text-align: center;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  transition: 0.3s;
+  border-radius: 10px;
+  margin-left: 20%;
+  margin-right: 20%;
+  padding: 20px;
+  background-color: rgb(255, 251, 251);
+}
+
+.card:hover {
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+}
+
+/* CSS for form input and button */
+label {
+  display: block;
+  margin-bottom: 10px;
+}
+
+input[type="number"] {
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid black ;
+  border-radius: 5px;
+}
+
+button {
+  padding: 10px;
+  background-color: rgb(196, 88, 37);
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.name h3{
+  padding: 1rem;
+  display: inline-block;
+  margin-right: 10px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
+.bus h3{
+  color: rgb(120, 71, 11);
+  padding: 1rem;
+  display: inline-block;
+  margin-right: 10px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
+.bal h3{
+  padding: 1rem;
+  display: inline-block;
+  margin-right: 10px;
+  color: rgb(16, 166, 26);
+  border-radius: 8px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+
+}
+.pend h3{
+  color: rgb(233, 109, 109);
+  padding: 1rem;
+  display: inline-block;
+  margin-right: 10px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
+.clear{
+
+  display: inline;
+
+}
+
+  </style>
+  <body>
+             <div class="card">
+
+             <div class="name">
+              <h3 >Company name :</h3>
+              <h3 ><%= company.companyname %></h3>
+             </div>
+
+              <div class="bus">
+                <h3 >Total Business :</h3>
+              <h3 ><%= company.totalbusines %></h3>
+              </div>
+  
+             <div class="pend">
+              <h3 >Payment Pending :</h3>
+              <h3 ><%= company.paymentpending %></h3>
+             </div>
+
+             <button id="btn" onclick="showBalance()" style="margin-bottom: 2rem;">Show Account Balance</button>
+             <div class="bal" id="balance" style="display: none;">
+               <h3>Account Balance :</h3>
+               <h3><%= account.accountbal %></h3>
+             </div>
+         
+             <script>
+               function showBalance() {
+                 document.getElementById("balance").style.display = "block";
+                 document.getElementById("btn").style.display = "none";
+               }
+             </script>
+            <div class="clear">
+              <form action="/admin/clear-pay" method="post">
+                <label for="amount" style="font-weight: bolder;">Amount to Clear:</label>
+                <input type="number" name="amount" required>
+                <input type="hidden" value="<%= company._id %>" name="companyId">
+                <input type="hidden" value="<%= account._id %>" name="accountId">
+                <button type="submit">Clear Payment</button>
+              </form>
+            </div>
+            <a href="/admin">Go To Home Page</a>
+
+    <script>
+      function clearPayment() {
+        const amount = document.getElementById("amount").value;
+        const balance =  account.accountbal ;
+        if (amount > balance) {
+          alert("Insufficient Balance");
+        }
+      }
+    </script>
+  </body>
+</html>

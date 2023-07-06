@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="icon" type="image/x-icon" href="/photos/logo.jpeg">
+    <title>Admin Login</title>
+    <style>
+       body {
+            font-family: Arial, sans-serif;
+            background-size: cover;
+            background-position: center;
+            background-color: #f7b07d;
+        }
+
+        .container {
+            margin: 4% auto;
+            text-align: center;
+            padding: 20px;
+            background-color: #f5deb3;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+            border-radius: 10px;
+            animation: slideIn 1s ease-in-out;
+            max-width: 458px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .header {
+            text-align: center;
+            margin-top: 50px;
+            margin-bottom: 20px;
+            animation: fadeIn 1s ease-in-out;
+        }
+
+        input[type="text"],
+        input[type="password"],
+        button[type="submit"] {
+
+            display: block;
+            margin: 10px 0;
+            padding: 10px;
+            border-radius: 5px;
+            border: none;
+            outline: none;
+            width: 80%;
+        }
+
+        .submit {
+            margin-left: 10px;
+        }
+
+        input[type="text"]:hover,
+        input[type="password"]:hover,
+        button[type="submit"]:hover {
+            background-color: #d2b48c;
+            cursor: pointer;
+            transition: background-color 0.2s ease-in-out;
+        }
+
+        button[type="submit"] {
+            background-color: #8b4513;
+            color: #fff;
+        }
+
+        button[type="submit"]:hover {
+            background-color: #a0522d;
+        }
+
+        .header p {
+            font-size: 18px;
+            color: #666;
+            margin: 0;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            animation: slideIn 1s ease-in-out;
+            align-items: center;
+            width: 80%;
+        }
+
+        label {
+            font-size: 20px;
+            color: #333;
+            margin-bottom: 5px;
+        }
+
+        input {
+            padding: 10px;
+            font-size: 18px;
+            border: none;
+            border-radius: 5px;
+            margin-bottom: 20px;
+        }
+
+        button {
+            padding: 10px;
+            font-size: 20px;
+            background-color: #333;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease-in-out;
+        }
+
+        button:hover {
+            background-color: #555;
+        }
+
+        .signup {
+            text-align: center;
+            margin-top: 20px;
+            animation: fadeIn 1s ease-in-out;
+        }
+
+        .signup a {
+            color: #333;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .signup a:hover {
+            color: #555;
+        }
+
+        /* Animations */
+        @keyframes slideIn {
+            0% {
+                transform: translateX(-50px);
+                opacity: 0;
+            }
+
+            100% {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+            }
+
+            100% {
+                opacity: 1;
+            }
+        }
+
+        @media (max-width: 600px) {
+            /* Adjustments for smaller screens */
+
+            .container {
+                max-width: 100%;
+                padding: 0 10px;
+            }
+
+            .header {
+                margin-top: 30px;
+            }
+
+            input[type="text"],
+            input[type="password"],
+            button[type="submit"] {
+                width: 100%;
+            }
+        }
+
+        form input {
+            margin: 10px;
+        }
+
+        .submit:hover {
+            background-color: #8B4513;
+            color: #fff;
+            cursor: pointer;
+        }
+        .dash-button{
+	background-color: #FF4B2B;
+	width: 150px;
+	height: 50px;
+	font-size: large;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	border-radius: 50px;
+	color: #fff;
+    margin: 20px;
+}
+.dash-btn-con{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+a{
+    text-decoration: none;
+}
+    </style>
+
+    <script>
+        function validateForm() {
+            const username = document.getElementById("username").value;
+            const password = document.getElementById("password").value;
+
+            
+            const usernameRegex = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/g;
+            
+
+            
+            if (!usernameRegex.test(username)) {
+                alert("Invalid username. Must be in Valid Email format");
+                return false;
+            }
+
+
+
+            return true;
+        }
+    </script>
+</head>
+
+<body>
+    <div class="container">
+        <div class="header">
+            <img src="logo.jpeg" alt="">
+            <h1>Velvet Homes</h1>
+            <p>Please login to access the Admin panel.</p>
+        </div>
+        <form onsubmit="return validateForm()" action="/admin/login" method="post">
+            <input type="text" id="username" name="email" placeholder="email" required>
+            <input type="password" id="password" name="password" placeholder="Password" required>
+
+            <button type="submit" class="submit">Login</button>
+        </form>
+        
+    </div>
+    <div class="dash-btn-con">
+        <a href="/seller/login"><div class="dash-button">Login As Seller</div></a>
+        <a href="/velvethomes/login"><div class="dash-button">Customer Login</div></a>
+    </div>
+</body>
+
+</html>

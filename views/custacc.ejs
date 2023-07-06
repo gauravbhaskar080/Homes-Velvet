@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Velvet Homes</title>
+    <script defer src="https://friconix.com/cdn/friconix-0.2538.js"> </script>
+    <link rel="icon" type="image/x-icon" href="/photos/logo.jpeg">
+    <link rel="stylesheet" href="/css/custacc.css">
+    <link rel="stylesheet" href="/navbar.css">
+    <link rel="stylesheet" href="/footer.css">
+</head>
+
+<body>
+    <%- include('header') %>
+        <div class="pinfo-con">
+            <div class="pinfo">
+                <div class="img">
+                    <img src="<%= customer.photo %>" alt="">
+                </div>
+                <div class="info">
+                    <div class="name">
+                        <%= customer.name %>
+                    </div>
+                    <div class="pnum">
+                        Phone number :
+                        <%= customer.pnum %>
+                    </div>
+                    <div class="address">
+                        Address :
+                        <%= customer.address %>
+                    </div>
+                    <div class="pincode">
+                        Pincode :
+                        <%= customer.pincode %>
+                    </div>
+                    <div class="btn-con"
+                        style="width: 100%; display: flex; justify-content: center; align-items: center;">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <h1 class="bought-heading">Bought product List</h1>
+        <div class="bought-products">
+
+            <% for(let product of customer.bought){ %>
+                    <div class="new-card">
+                        <div class="inner-img">
+                            <img src="<%= product.dispimg %>" class="card-img-top" alt="...">
+                        </div>
+                        <div class="product-body">
+                            <div class="product-element"><h2><%= product.title %></h2></div>
+                            <div class="product-element-price">Rs.<%= product.price %>\-</div>
+                            <div class="product-element"><h3><%= product.cat %></h3></div>
+                            
+                        </div>
+                        
+                    </div>
+                    <% } %>
+
+        </div>
+        <%- include('footer') %>
+    <script src="/navbar.js"></script>
+</body>
+
+</html>

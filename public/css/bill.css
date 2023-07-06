@@ -1,0 +1,153 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    text-decoration: none;
+}
+
+body {
+    background-color: #ffcc99;
+}
+
+.bil-con {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.bil-head {
+    width: 80%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    background-color: #ffd7ae;
+    margin-top: 70px;
+}
+
+.bil-main {
+    width: 80%;
+    margin-top: 10px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: flex-start;
+    background-color: #ffd7ae;
+    min-height: 150px;
+}
+
+.title {
+    font-size: x-large;
+    font-weight: bold;
+    height: 30px;
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.srno {
+    width: 10%;
+    font-size: larger;
+    text-align: center;
+    height: 90px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.prdes {
+    width: 50%;
+    font-size: larger;
+    height: 90px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.qty {
+    width: 10%;
+    font-size: larger;
+    text-align: center;
+    height: 90px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.rate {
+    width: 10%;
+    font-size: larger;
+    text-align: center;
+    height: 90px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.subt {
+    width: 20%;
+    font-size: larger;
+    text-align: center;
+    height: 90px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.total {
+    width: 80%;
+    margin-top: 8px;
+    font-size: x-large;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: flex-start;
+    background-color: #ffd7ae;
+}
+
+.ttl {
+    width: 80%;
+    text-align: center;
+    padding: 10px 0;
+}
+
+.pr {
+    width: 20%;
+    text-align: center;
+    padding: 10px 0;
+}
+
+.prdes img {
+    height: 80px;
+    width: 100px;
+    border: 1px solid black;
+}
+
+.bil-con a {
+    width: 80%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    color: #fff;
+}
+
+.btn {
+    height: 40px;
+    border: 1px solid rgb(249, 121, 9);
+    background-color: rgb(249, 121, 9);
+    font-size: x-large;
+    width: 15rem;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
+    cursor: pointer;
+    margin-bottom: 50px;
+}
+
+.btn:hover {
+    background-color: rgb(253, 139, 40);
+}

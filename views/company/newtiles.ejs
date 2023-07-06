@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="/photos/logo.jpeg">
+    <title>Velvet Homes</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: #ffcc99;
+        }
+
+        h1 {
+            margin: 2px 0;
+            color: Gold;
+            height: 90px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        #logo {
+            height: 50px;
+            width: 70px;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        .navbar {
+            display: flex;
+            font-size: xx-large;
+            justify-content: space-evenly;
+            align-items: center;
+            height: 70px;
+            background-color: #996633;
+            border-top: 3px solid gold;
+            border-bottom: 3px solid gold;
+        }
+
+        .obj {
+            background-color: #eaac6e;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            border-radius: 10px;
+            height: 40px;
+        }
+
+        .obj:hover {
+            background-color: #d2a67a;
+        }
+
+        .navbar a {
+            width: 18%;
+            color: #fff;
+        }
+
+        .selected {
+            height: 50px;
+            border-radius: 20px;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            border: 2px solid gold;
+        }
+
+        h2 {
+            color: #4c2b1c;
+            text-align: center;
+            margin-top: 15px;
+            font-size: xx-large;
+            text-decoration: underline;
+        }
+
+        .form-con {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+        }
+
+        .input-form {
+            width: 45%;
+            height: 660px;
+            display: flex;
+            justify-content: space-evenly;
+            flex-direction: column;
+            align-items: center;
+            border: 2px solid #4c2b1c;
+            border-radius: 10px;
+            margin-bottom: 50px;
+            background-color: #e9a25b;
+        }
+
+        .input-form div {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        input {
+            background-color: rgba(255, 255, 255, 0.4);
+            width: 80%;
+            height: 30px;
+            margin: 2px 0;
+            /* border: 2px solid #24a0ed; */
+            border: none;
+            font-size: larger;
+            border-radius: 5px;
+            color: saddlebrown;
+        }
+
+        textarea {
+            background-color: rgba(255, 255, 255, 0.4);
+            width: 80%;
+            border: none;
+            border-radius: 5px;
+            color: saddlebrown;
+            font-size: larger;
+        }
+
+        select {
+            background-color: rgba(255, 255, 255, 0.4);
+            color: #333;
+            width: 30%;
+            border: none;
+            border-radius: 5px;
+            color: saddlebrown;
+            font-size: larger;
+        }
+
+        label {
+            font-size: larger;
+            /* color: rgb(51, 133, 23); */
+            color: #F5EBE0;
+            margin: 5px;
+            font-weight: bold;
+        }
+
+        .label-con {
+            margin: 2px;
+        }
+
+        button {
+            margin-top: 5px;
+            width: 50%;
+            height: 35px;
+            background-color: #4c2b1c;
+            border-radius: 10px;
+            border: 2px solid #4c2b1c;
+            color: silver;
+            font-size: larger;
+        }
+
+        .home {
+            width: 100%;
+            background-color: #3891e4;
+            height: 50px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 10px;
+            font-size: x-large;
+            color: silver;
+            border: 2px solid #2687e2;
+        }
+
+        .home:hover {
+            background-color: #469bea;
+        }
+
+        .homecon {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            margin-top: 10px;
+        }
+
+        .homecon a {
+            width: 60%;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="navbar">
+        <a href="/seller/<%= company._id %>/tile">
+            <div class="obj <% if(type==='tile'){ %>selected<% } %>">Tiles</div>
+        </a>
+        <a href="/seller/<%= company._id %>/furniture">
+            <div class="obj <% if(type==='furniture'){ %>selected<% } %>">Furniture</div>
+        </a>
+        <a href="/seller/<%= company._id %>/sanitary">
+            <div class="obj <% if(type==='sanitary'){ %>selected<% } %>">Sanitary</div>
+        </a>
+        <a href="/seller/<%= company._id %>/artifact">
+            <div class="obj <% if(type==='artifact'){ %>selected<% } %>">Artifacts</div>
+        </a>
+        <a href="/seller/<%= company._id %>/paint">
+            <div class="obj <% if(type==='paint'){ %>selected<% } %>">Paints</div>
+        </a>
+    </div>
+    <div class="homecon">
+        <a href="/seller/<%= company._id %>">
+            <div class="home">Go To Home Page</div>
+        </a>
+    </div>
+    <h2>Form To Register New <%= type %> Item
+    </h2>
+    <div class="form-con">
+        <form action="/seller/<%= type %>/<%= company._id %>/addpr" class="input-form" method="post">
+            <% if(type==='tile' ){ %>
+                <div>
+                    <label for="type-select-tile">Select The Tile Type : </label>
+                    <select name="prtype" id="type-select-tile">
+                        <option value="">---select---</option>
+                        <option value="6443da7254e4b3372038858d">Bedroom Floor Tiles</option>
+                        <option value="6443da7254e4b3372038858f">Living Room Floor Tiles</option>
+                        <option value="6443da7254e4b33720388590">Kitchen Floor Tiles</option>
+                        <option value="6443da7254e4b3372038858e">Bathroom Floor Tiles</option>
+                        <option value="6443da7254e4b33720388591">Bedroom Wall Tiles</option>
+                        <option value="6443da7254e4b33720388593">Living Room Wall Tiles</option>
+                        <option value="6443da7254e4b33720388594">Kitchen Wall Tiles</option>
+                        <option value="6443da7254e4b33720388592">Bathroom Wall Tiles</option>
+                    </select>
+                </div>
+                <% } %>
+                    <% if(type==='furniture' ){ %>
+                        <div>
+                            <label for="type-select-furniture">Select The Furniture Type : </label>
+                            <select name="prtype" id="type-select-furniture">
+                                <option value="">---select---</option>
+                                <option value="6442c7605752a70cdc112653">Beds</option>
+                                <option value="6442c7605752a70cdc112652">Sofa</option>
+                                <option value="6442c7605752a70cdc112654">Tables</option>
+                                <option value="6442c7605752a70cdc112655">Chairs</option>
+                                <option value="6442c7605752a70cdc112656">Almirah</option>
+                                <option value="6442c7605752a70cdc112658">Cabinets</option>
+                                <option value="6442c7605752a70cdc112657">Dinning Table</option>
+                                <option value="6442c7605752a70cdc112659">Shoes Storage</option>
+                            </select>
+                        </div>
+                        <% } %>
+                            <% if(type==='sanitary' ){ %>
+                                <div>
+                                    <label for="type-select-Sanitary">Select The Sanitary Type : </label>
+                                    <select name="prtype" id="type-select-Sanitary">
+                                        <option value="">---select---</option>
+                                        <option value="6443aedcef840d5371db7d1a">Taps</option>
+                                        <option value="6443aedcef840d5371db7d20">Toilets</option>
+                                        <option value="6443aedcef840d5371db7d19">Showers</option>
+                                        <option value="6443aedcef840d5371db7d1b">Bath-tubs</option>
+                                        <option value="6443aedcef840d5371db7d1e">Kitchen-Sinks</option>
+                                        <option value="6443aedcef840d5371db7d1c">Bathroom-Sinks</option>
+                                        <option value="6443aedcef840d5371db7d1d">Bathroom Accessories</option>
+                                    </select>
+                                </div>
+                                <% } %>
+                                    <div class="label-con">
+                                        <label for="title">Enter The Title For the Product : </label>
+                                    </div>
+                                    <div>
+                                        <input type="text" name="title" id="title">
+                                    </div>
+                                    <div class="label-con">
+                                        <label for="dispimg">Enter The Display Image of The Product : </label>
+                                    </div>
+                                    <div>
+                                        <input type="text" name="dispimg" id="dispimg">
+                                    </div>
+                                    <div class="label-con">
+                                        <label for="price">Enter the Price In Rs. : </label>
+                                    </div>
+                                    <div>
+                                        <input type="number" name="price" id="price">
+                                    </div>
+                                    <div class="label-con">
+                                        <label for="description">Give Description of The Product : </label>
+                                    </div>
+                                    <div>
+                                        <textarea name="description" id="description" cols="30" rows="5"></textarea>
+                                    </div>
+                                    <button>Add Product</button>
+        </form>
+    </div>
+</body>
+
+</html>

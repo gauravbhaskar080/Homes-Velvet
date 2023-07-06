@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="/photos/logo.jpeg">
+    <link rel="stylesheet" href="/c1.css">
+    <title>Velvet Homes</title>
+</head>
+
+<body>
+    <div class="navbar" id="nav">
+        <a href="/seller/<%= company._id %>/tile">
+            <div class="obj">Tiles</div>
+        </a>
+        <a href="/seller/<%= company._id %>/furniture">
+            <div class="obj">Furniture</div>
+        </a>
+        <a href="/seller/<%= company._id %>/sanitary">
+            <div class="obj">Sanitary</div>
+        </a>
+        <a href="/seller/<%= company._id %>/artifact">
+            <div class="obj">Artifacts</div>
+        </a>
+        <a href="/seller/<%= company._id %>/paint">
+            <div class="obj">Paints</div>
+        </a>
+    </div>
+    <div class="btn-logout-con">
+        <a href="/seller/logout">
+            <div class="btn-logout">Logout</div>
+        </a>
+    </div>
+    <h2 class="company-name">Company Name : <%= company.companyname %>
+    </h2>
+    <div class="important">
+        <div class="totalbus">
+            <div class="tex-title">Total Business Done : </div>
+            <div class="strip">
+                <img src="/photos/tiles/atm_strip.png" alt="">
+                <div class="tex-con"><span>Rs. </span>
+                    <%= company.totalbusines %>
+                </div>
+            </div>
+            <div class="master">
+                <div class="accnum">
+                    1234 XXXX XXXX 7890
+                </div>
+                <img src="/photos/tiles/master.png" alt="">
+            </div>
+        </div>
+        <div class="totalbus">
+            <div class="tex-title">Payment Cleared : </div>
+            <div class="strip">
+                <img src="/photos/tiles/atm_strip.png" alt="">
+                <div class="tex-con"><span>Rs. </span>
+                    <%= company.paymentcleared %>
+                </div>
+            </div>
+            <div class="master">
+                <div class="accnum">
+                    1234 XXXX XXXX 7890
+                </div>
+                <img src="/photos/tiles/master.png" alt="">
+            </div>
+        </div>
+        <div class="totalbus">
+            <div class="tex-title">Payment Pending : </div>
+            <div class="strip">
+                <img src="/photos/tiles/atm_strip.png" alt="">
+                <div class="tex-con"><span>Rs. </span>
+                    <%= company.paymentpending %>
+                </div>
+            </div>
+            <div class="master">
+                <div class="accnum">
+                    1234 XXXX XXXX 7890
+                </div>
+                <img src="/photos/tiles/master.png" alt="">
+            </div>
+        </div>
+    </div>
+    <h3>List Of Products Enlisted</h3>
+    <div class="products">
+        <% for(let i = 0; i < 5 && i < company.products.length; i++) { %>
+            <div class="card">
+                <img src="<%= company.products[i].dispimg %>" class="card-img-top" alt="...">
+                <div class="product-title">
+                    <%= company.products[i].title %>
+                </div>
+                <div class="card-body">
+                    <a href="/seller/<%= company._id %>/edit/<%= company.products[i]._id %>" class="btn">Edit</a>
+                </div>
+            </div>
+        <% } %>
+    </div>
+    
+    <% if (company.products.length > 5) { %>
+        <button id="loadmore" class="load-more flip-button custom-btn btn-11">Load More</button>
+    <% } %>
+</body>
+<script>
+    window.onscroll = function () { scrollFunction() };
+
+    function scrollFunction() {
+        if (document.body.scrollTop > 25 || document.documentElement.scrollTop > 25) {
+            document.getElementById("nav").style.height = "50px";
+        } else {
+            document.getElementById("nav").style.height = "65px";
+        }
+    }
+    const company = <%- JSON.stringify(company) %>;
+    const products = <%- JSON.stringify(company.products) %>;
+    const loadMoreBtn = document.getElementById('loadmore');
+    const prodCon = document.querySelector('.products');
+    let itemsToShow = 5;
+    let shownItems = 0;
+    
+    function showMoreItems() {
+      for (let i = shownItems; i < shownItems + itemsToShow && i < products.length; i++) {
+        const newCard = document.createElement('div');
+        newCard.classList.add('card');
+        const prod = products[i];
+    
+        const prodImg = document.createElement('img');
+        prodImg.src = prod.dispimg;
+        prodImg.classList.add('card-img-top');
+        prodImg.alt = '';
+    
+        const prodTitle = document.createElement('div');
+        prodTitle.classList.add('product-title');
+        prodTitle.innerText = prod.title;
+    
+        const prodBody = document.createElement('div');
+        prodBody.classList.add('card-body');
+    
+        const editBtn = document.createElement('a');
+        editBtn.href = `/velvethomes/seller/${company._id}/edit/${prod._id}`;
+        editBtn.classList.add('btn');
+        editBtn.innerText = 'Edit';
+    
+        prodBody.appendChild(editBtn);
+    
+        newCard.appendChild(prodImg);
+        newCard.appendChild(prodTitle);
+        newCard.appendChild(prodBody);
+    
+        prodCon.appendChild(newCard);
+      }
+      shownItems += itemsToShow;
+      if (shownItems >= products.length) {
+        loadMoreBtn.style.display = 'none';
+      }
+    }
+    
+    loadMoreBtn.addEventListener('click', showMoreItems);
+
+</script>
+
+</html>

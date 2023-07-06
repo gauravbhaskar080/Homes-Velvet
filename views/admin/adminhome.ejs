@@ -1,0 +1,713 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>admin</title>
+</head>
+
+<body>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background: linear-gradient(to right, #ffcc99 30%, #996633 100%);
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        .full-body {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-evenly;
+        }
+
+        .side-dash {
+            margin: 30px 0;
+            width: 18%;
+            height: 700px;
+            border: 1px solid #999;
+            border-radius: 10px;
+            background-color: #E0144C;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, .1), 0 2px 4px -1px rgba(0, 0, 0, .06);
+            margin-bottom: 0px;
+
+        }
+
+        .side-dash:hover {
+            cursor: pointer;
+        }
+
+        .side-header {
+            display: flex;
+            height: 4.875rem;
+
+            border-radius: 10px 10px 0 0;
+        }
+
+        .side-header>img {
+            width: 18%;
+            height: 58%;
+            margin: 8% 3% 8% 3%;
+        }
+
+        .side-header>span {
+            margin-top: auto;
+            margin-bottom: auto;
+            color: #fff;
+            font-size: 28px;
+            width: 100%;
+            text-align: center;
+        }
+
+        .line {
+            background-image: linear-gradient(90deg, hsla(0, 0%, 100%, 0), #fff, hsla(0, 0%, 100%, 0));
+            background-color: transparent;
+            margin-bottom: 0.5rem;
+            margin-top: 0;
+            border-top: none;
+            height: 1px;
+            margin: 1rem 0;
+            color: inherit;
+            border: 0;
+            opacity: .25;
+        }
+
+        .navbar-nav {
+            display: flex;
+            flex-direction: column;
+            padding-left: 0;
+            margin-bottom: 0;
+            list-style: none;
+            justify-content: flex-start;
+            align-items: center;
+        }
+
+        .navbar-nav a {
+            width: 90%;
+        }
+
+        .nav-item {
+            display: flex;
+            margin: 0.125rem 13% 10% 13%;
+            width: 100%;
+            color: #fff;
+            height: 50px;
+            justify-content: space-evenly;
+            align-items: center;
+            margin-left: 0;
+            margin-right: 0;
+            border-radius: 5px;
+        }
+
+        .nav-item:hover {
+            /* background-image: linear-gradient(195deg, #ec407a, #d81b60); */
+            /* background-color: transparent; */
+            background-color: #060047;
+            box-shadow: 5px 7px 10px rgba(0, 0, 0, 0.6);
+        }
+
+        .nav-item>img {
+            width: 12%;
+            height: 40px;
+            margin-right: 6%;
+        }
+
+        .nav-text {
+            font-size: 22px;
+            margin-top: auto;
+            margin-bottom: auto;
+        }
+
+
+
+        .main-content {
+            width: 78%;
+            margin-right: 5px;
+            height: 700px;
+            border: 1px solid #333;
+            margin: 30px 0;
+            overflow-x: hidden;
+            overflow-y: auto;
+            margin-bottom: 0;
+            scroll-behavior: smooth;
+        }
+
+        .busineses {
+            margin: 10px;
+            width: 310px;
+            height: 175px;
+            background-color: #ffefe0;
+            border-radius: 10px;
+            box-shadow: 5px 7px 10px rgba(0, 0, 0, 0.6);
+        }
+
+        .ttlbus {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .imog {
+            height: 100px;
+            width: 100px;
+            margin: 20px;
+            margin-right: 0;
+            margin-bottom: 10px;
+            box-shadow: 5px 7px 10px rgba(0, 0, 0, 0.6);
+
+        }
+
+        .main-con {
+            height: 120px;
+            display: flex;
+            flex-direction: column;
+            width: 150px;
+            justify-content: space-evenly;
+            align-items: center;
+            margin-top: 20px;
+        }
+
+        .title {
+            font-size: larger;
+        }
+
+        .val {
+            font-size: x-large;
+            font-weight: bold;
+        }
+
+        .last-day {
+            font-size: larger;
+            margin-left: 20px;
+        }
+
+        .gr {
+            font-size: x-large;
+            color: rgb(19, 196, 19);
+        }
+
+        .cards {
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        h2 {
+            font-size: xx-large;
+            width: 100%;
+            text-align: center;
+            margin: 20px 15px;
+        }
+
+        .comp-con {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            margin: 10px 0;
+        }
+
+        .comp-card {
+            margin: 10px;
+            width: 310px;
+            min-height: 200px;
+            background-color: #ffefe0;
+            border-radius: 10px;
+            box-shadow: 5px 7px 10px rgba(0, 0, 0, 0.6);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-evenly;
+            align-items: center;
+        }
+
+        .comp-name {
+            font-size: xx-large;
+            /* background-color: #ffeac8; */
+            box-shadow: 5px 7px 10px rgba(0, 0, 0, 0.7);
+            width: 90%;
+            min-height: 40px;
+            text-align: center;
+            color: rgb(33, 4, 104);
+        }
+
+        .comp-amount {
+            font-size: 28px;
+            color: rgb(193, 55, 55);
+            text-align: center;
+        }
+
+        .comp-amount span {
+            color: #000;
+        }
+
+        .bttns {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .bttns a {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .btn1 {
+            width: 70%;
+            border: 2px solid #119af0;
+            background-color: #119af0;
+            text-align: center;
+            min-height: 30px;
+            color: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: x-large;
+            border-radius: 5px;
+        }
+
+        .btn1:hover {
+            background-color: rgba(6, 154, 246, 0.8);
+        }
+
+        .pend-con {
+            width: 100%;
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .del-card {
+            margin: 10px;
+            width: 310px;
+            min-height: 250px;
+            background-color: #ffefe0;
+            border-radius: 10px;
+            box-shadow: 5px 7px 10px rgba(0, 0, 0, 0.6);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-evenly;
+            align-items: center;
+        }
+
+        .pro-des-con {
+            width: 100%;
+            display: flex;
+            justify-content: space-evenly;
+        }
+
+        .img-con {
+            width: 40%;
+            height: 40%;
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+        }
+
+        .img-pro {
+            height: 100%;
+            width: 100%;
+            box-shadow: 5px 7px 10px rgba(0, 0, 0, 0.8);
+        }
+
+        .pro-des {
+            width: 50%;
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            font-size: larger;
+        }
+
+        .cust-con {
+            width: 100%;
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .cust-card {
+            margin: 10px;
+            width: 310px;
+            min-height: 200px;
+            background-color: #ffefe0;
+            border-radius: 10px;
+            box-shadow: 5px 7px 10px rgba(0, 0, 0, 0.6);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-evenly;
+            align-items: center;
+        }
+
+        .cust-des-con {
+            width: 100%;
+            display: flex;
+            justify-content: space-evenly;
+        }
+
+        .cust-img {
+            width: 40%;
+            height: 125px;
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+            border: 0.25px solid black;
+        }
+
+        .img-cust {
+            height: 100%;
+            width: 100%;
+        }
+
+        .cust-des {
+            width: 50%;
+            display: flex;
+            justify-content: space-evenly;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            font-size: larger;
+        }
+
+        .comp-img {
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            align-items: center;
+            font-size: x-large;
+        }
+
+        .comp-des {
+            font-size: larger;
+            text-align: center;
+        }
+
+        #blue {
+            color: #1c137b;
+        }
+
+        #green {
+            color: rgb(3, 130, 20);
+            font-size: x-large;
+        }
+
+        .btn-11 {
+            border: none;
+            background: rgb(251,33,117);
+              background: linear-gradient(0deg, rgba(251,33,117,1) 0%, rgba(234,76,137,1) 100%);
+              color: #fff;
+              overflow: hidden;
+          }
+          .btn-11:hover {
+              text-decoration: none;
+              color: #fff;
+          }
+          .btn-11:before {
+              position: absolute;
+              content: '';
+              display: inline-block;
+              top: -180px;
+              left: 0;
+              width: 30px;
+              height: 100%;
+              background-color: #fff;
+              animation: shiny-btn1 3s ease-in-out infinite;
+          }
+          .btn-11:hover{
+            opacity: .7;
+          }
+          .btn-11:active{
+            box-shadow:  4px 4px 6px 0 rgba(255,255,255,.3),
+                        -4px -4px 6px 0 rgba(116, 125, 136, .2), 
+              inset -4px -4px 6px 0 rgba(255,255,255,.2),
+              inset 4px 4px 6px 0 rgba(0, 0, 0, .2);
+          }
+          
+          
+          @-webkit-keyframes shiny-btn1 {
+              0% { -webkit-transform: scale(0) rotate(45deg); opacity: 0; }
+              80% { -webkit-transform: scale(0) rotate(45deg); opacity: 0.5; }
+              81% { -webkit-transform: scale(4) rotate(45deg); opacity: 1; }
+              100% { -webkit-transform: scale(50) rotate(45deg); opacity: 0; }
+          }
+          
+          .custom-btn {
+            width: 130px;
+            height: 40px;
+            color: #fff;
+            border-radius: 10px;
+            padding: 10px 25px;
+            font-family: 'Lato', sans-serif;
+            font-weight: 500;
+            background: transparent;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            position: relative;
+            display: inline-block;
+             box-shadow:inset 2px 2px 2px 0px rgba(255,255,255,.5),
+             7px 7px 20px 0px rgba(0,0,0,.1),
+             4px 4px 5px 0px rgba(0,0,0,.1);
+            outline: none;
+            margin-top: 1%;
+            margin-left: 37%;
+              margin-right: auto;
+              margin-bottom: 20px;
+              width: 26%;
+              height: 50px;
+              font-size: 25px;
+              background-color: #119af0;
+          }
+          @media(max-width: 900px){
+            .side-dash{
+                display: none;
+            }
+            .main-content{
+                width: 90%;
+            }
+          }
+    </style>
+    <div class="full-body">
+        <div class="side-dash">
+            <div class="side-header"><span>Admin</span>
+            </div>
+            <hr class="line">
+            <div class="side-body">
+                <ul class="navbar-nav">
+                    <a href="#section1">
+                        <li class="nav-item">
+                            <img src="https://cdn-icons-png.flaticon.com/512/9949/9949986.png" alt="">
+                            <div class="nav-text">Company Statistics</div>
+                        </li>
+                    </a>
+                    <a href="#section2">
+                        <li class="nav-item">
+                            <img src="https://cdn-icons-png.flaticon.com/512/5101/5101980.png" alt="">
+                            <div class="nav-text">Pending Payments</div>
+                        </li>
+                    </a>
+                    <a href="#section4">
+                        <li class="nav-item">
+                            <img src="https://cdn-icons-png.flaticon.com/512/4814/4814961.png" alt="">
+                            <div class="nav-text">List Of Customers</div>
+                        </li>
+                    </a>
+                    <a href="#section5">
+                        <li class="nav-item">
+                            <img src="https://cdn-icons-png.flaticon.com/512/993/993928.png" alt="">
+                            <div class="nav-text">List Of Companies</div>
+                        </li>
+                    </a>
+                    <a href="/admin/logout">
+                        <li class="nav-item">
+                            <div class="nav-text">Logout</div>
+                        </li>
+                    </a>
+                </ul>
+
+            </div>
+
+        </div>
+        <div class="main-content">
+            <h2 id="section1">Company Statistics</h2>
+            <div class="cards">
+                <div class="busineses">
+                    <div class="ttlbus">
+                        <div class="imog-con"><img src="https://cdn-icons-png.flaticon.com/512/3271/3271314.png" alt=""
+                                class="imog">
+                        </div>
+                        <div class="main-con">
+                            <div class="title">Total Turnover</div>
+                            <div class="val">Rs. <%= account.totalbusiness %>/-</div>
+                        </div>
+                    </div>
+                    <div class="last-day"><span class="gr">+Rs. 0</span>/- last month</div>
+                </div>
+                <div class="busineses">
+                    <div class="ttlbus">
+                        <div class="imog-con"><img src="https://cdn-icons-png.flaticon.com/512/2769/2769191.png" alt=""
+                                class="imog">
+                        </div>
+                        <div class="main-con">
+                            <div class="title">Balance In Account</div>
+                            <div class="val">Rs. <%= account.accountbal %>/-</div>
+                        </div>
+                    </div>
+                    <div class="last-day"><span class="gr">+Rs. 0</span>/- last month</div>
+                </div>
+                <div class="busineses">
+                    <div class="ttlbus">
+                        <div class="imog-con"><img src="https://cdn-icons-png.flaticon.com/512/5290/5290058.png" alt=""
+                                class="imog">
+                        </div>
+                        <div class="main-con">
+                            <div class="title">Number Of Companies With Payment Pending</div>
+                            <div class="val">
+                                <%= account.npp %>/-
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="busineses">
+                    <div class="ttlbus">
+                        <div class="imog-con"><img src="https://cdn-icons-png.flaticon.com/512/4334/4334570.png" alt=""
+                                class="imog">
+                        </div>
+                        <div class="main-con">
+                            <div class="title">Debt To Be Cleared To Company</div>
+                            <div class="val">Rs. <%= account.companytotalpaypen %>/-</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="busineses">
+                    <div class="ttlbus">
+                        <div class="imog-con"><img src="https://cdn-icons-png.flaticon.com/512/7314/7314637.png" alt=""
+                                class="imog">
+                        </div>
+                        <div class="main-con">
+                            <div class="title">Profit Made By The Company</div>
+                            <div class="val">Rs. <%=account.profit%>/-</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <h2 id="section2">Pending Payments</h2>
+            <div class="comp-con">
+                <% for(let comp of account.pendingpayments){ %>
+                    <div class="comp-card">
+                        <div class="comp-name">
+                            <%= comp.companyname %>
+                        </div>
+                        <div class="comp-amount"><span>Payment Pending : </span> Rs. <%= comp.paymentpending %>/-</div>
+                        <div class="bttns">
+                            <a href="/admin/clearpay/<%= comp._id %>">
+                                <div class="btn1">Clear Payment</div>
+                            </a>
+                        </div>
+                    </div>
+                    <% } %>
+            </div>
+            <h2 id="section4">List Of Customers</h2>
+            <div class="cust-con">
+                <% for(let i = 0; i < 3 && i < customers.length; i++) { %>
+                  <div class="cust-card">
+                    <div class="cust-des-con">
+                      <div class="cust-img"><img src="<%= customers[i].photo %>" class="img-cust" alt=""></div>
+                      <div class="cust-des">
+                        <div class="pay"><b>Customer Name: </b> <%= customers[i].name %></div>
+                        <div class="add"><b>Phone Number: </b><%= customers[i].pnum %></div>
+                      </div>
+                    </div>
+                    <div class="bttns">
+                      <a href="/admin/customers/<%= customers[i]._id %>"><div class="btn1">View Customer</div></a>
+                    </div>
+                  </div>
+                <% } %>
+              </div>
+              <% if (customers.length > 1) { %>
+                <button id="load-more" class="load-more flip-button custom-btn btn-11">Load More</button>
+              <% } %>
+
+            <h2 id="section5">List Of Companies</h2>
+            <div class="cust-con">
+                <% for(let comp of company){ %>
+                    <div class="comp-card">
+                        <div class="comp-img"><b>Company Name: </b> <span id="blue">
+                                <%= comp.companyname %>
+                            </span></div>
+                        <div class="comp-des">
+                            <div class="add"><b>Total bussines Done: </b> <br> <span id="green">Rs. <%=
+                                        comp.totalbusines %>/-</span></div>
+                        </div>
+                        <div class="bttns">
+                            <a href="/admin/company/<%= comp._id %>">
+                                <div class="btn1">View More</div>
+                            </a>
+                        </div>
+                    </div>
+                    <% } %>
+            </div>
+        </div>
+
+        <script>
+            const customers = <%- JSON.stringify(customers) %>;
+  const loadMoreBtn = document.querySelector('#load-more');
+  const custCon = document.querySelector('.cust-con');
+  let itemsToShow = 3;
+  let shownItems = 3;
+
+  function showMoreItems() {
+    for (let i = shownItems; i < shownItems + itemsToShow && i < customers.length; i++) {
+      const newCard = document.createElement('div');
+      newCard.classList.add('cust-card');
+      const cust = customers[i];
+
+      const custDesCon = document.createElement('div');
+      custDesCon.classList.add('cust-des-con');
+
+      const custImg = document.createElement('div');
+      custImg.classList.add('cust-img');
+      custImg.style.width = '40%';
+      const img = document.createElement('img');
+      img.style.width = '100%';
+      img.style.height = '100%';
+      img.src = cust.photo;
+      img.alt = '';
+      custImg.appendChild(img);
+      custDesCon.appendChild(custImg);
+
+      const custDes = document.createElement('div');
+      custDes.classList.add('cust-des');
+
+      const pay = document.createElement('div');
+      pay.classList.add('pay');
+      pay.innerHTML = `<b>Customer Name: </b>${cust.name}`;
+      custDes.appendChild(pay);
+
+      const add = document.createElement('div');
+      add.classList.add('add');
+      add.innerHTML = `<b>Phone Number: </b>${cust.pnum}`;
+      custDes.appendChild(add);
+
+      custDesCon.appendChild(custDes);
+      newCard.appendChild(custDesCon);
+
+      const bttns = document.createElement('div');
+      bttns.classList.add('bttns');
+
+      const viewCust = document.createElement('a');
+      viewCust.href = '';
+      const btn1 = document.createElement('div');
+      btn1.classList.add('btn1');
+      btn1.innerText = 'View Customer';
+      viewCust.appendChild(btn1);
+      bttns.appendChild(viewCust);
+
+      newCard.appendChild(bttns);
+      custCon.appendChild(newCard);
+    }
+    shownItems += itemsToShow;
+    if (shownItems >= customers.length) {
+      loadMoreBtn.style.display = 'none';
+    }
+  }
+
+  loadMoreBtn.addEventListener('click', showMoreItems);
+        
+</script>
+
+</body>
+
+</html>

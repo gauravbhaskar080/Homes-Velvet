@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Company Signup</title>
+    <link rel="icon" type="image/x-icon" href="/photos/logo.jpeg">
+    <style>
+        * {
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+          }
+          body{
+            font-family: Arial, sans-serif;
+            background-size: cover;
+            background-position: center;
+            background-color: #f7b07d;
+          }
+          .container{
+            margin: 3% auto;
+            text-align: center;
+            padding: 20px;
+            background-color: #f5deb3;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+            border-radius: 10px;
+            animation: slideIn 1s ease-in-out;
+            max-width: 458px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            height: 660px;
+          }
+          
+          /* Header Styles */
+          .header {
+            text-align: center;
+            margin-top: 15px;
+          }
+          
+          .header img {
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+          }
+          
+          .header h1 {
+            margin: 6px 0;
+            font-size: 36px;
+          }
+          
+          .header p {
+            margin: 0;
+            font-size: 18px;
+          }
+          
+          /* Form Styles */
+          form {
+            display: flex;
+            flex-direction: column;
+            animation: slideIn 1s ease-in-out;
+            align-items: center;
+            width: 80%;
+        }
+          
+          label {
+            display: block;
+            margin-bottom: 5px;
+            font-size: 18px;
+            font-weight: bold;
+          }
+          
+          input[type="text"],
+          input[type="email"],
+          input[type="password"] {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+            height: 35px;
+          }
+          input[type="text"]:hover,
+        input[type="password"]:hover,
+        button[type="submit"]:hover {
+            background-color: #d2b48c;
+            cursor: pointer;
+            transition: background-color 0.2s ease-in-out;
+        }
+        button[type="submit"] {
+          background-color: #8b4513;
+          color: #fff;
+      }
+
+      button[type="submit"]:hover {
+          background-color: #a0522d;
+      }
+
+          button[type="submit"] {
+            width: 100%;
+            background-color: #333;
+            color: #fff;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 18px;
+            transition: background-color 0.3s ease;
+          }
+          button {
+            padding: 10px;
+            font-size: 20px;
+            background-color: #333;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease-in-out;
+        }
+
+        button:hover {
+            background-color: #555;
+        }
+          input[type="submit"]:hover {
+            background-color:#333;
+          }
+          input[type="email"]:hover {
+            background-color:#d2b48c;
+          }
+          label {
+            font-size: 20px;
+            color: #333;
+            margin-bottom: 5px;
+        }
+          /* Login Styles */
+          .login {
+            text-align: center;
+            
+            font-size: 18px;
+            
+          }
+          .submit:hover {
+            background-color: #8B4513;
+            color: #fff;
+            cursor: pointer;
+        }
+
+          .login a {
+            color: #333;
+            text-decoration: none;
+          }
+          
+          .login a:hover {
+            text-decoration: underline;
+          }
+          
+          /* Media Queries */
+          @media screen and (max-width: 600px) {
+            form {
+              max-width: 90%;
+            }
+          }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="header">
+            <img src="/logo.jpeg" alt="">
+            <h1>Velvet Homes</h1>
+            <p>Create your company account.</p>
+        </div>
+        <form>
+            <label for="companyname">Company Name</label>
+            <input type="text" id="companyname" name="companyname" placeholder="Enter your company name" required>
+
+            <label for="gstnumber">GST Number</label>
+            <input type="text" id="gstnumber" name="gstnumber" placeholder="Enter your GST number" required>
+
+            <label for="email">Registered Email</label>
+            <input type="email" id="email" name="email" placeholder="Enter your registered email" required>
+
+            <label for="password">Password</label>
+            <input type="password" id="password" name="password" placeholder="Enter your password" required>
+
+            <label for="confirmpassword">Confirm Password</label>
+            <input type="password" id="confirmpassword" name="confirmpassword" placeholder="Confirm your password" required>
+
+            <button type="submit" class="submit" id="signup" onclick="validateForm()">Sign Up</button>
+        </form>
+        <div class="login">
+            <p>Already have an account? <a href="#">Log in here</a></p>
+        </div>
+    </div>
+    
+    <script>
+      
+
+      function validateForm() {
+        var password = document.getElementById("password").value;
+        var confirm_password = document.getElementById("confirmpassword").value;
+        
+       
+        var regex = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}$/; 
+        if (!regex.test(password)) {
+          alert("Password must contain at least one digit, one lowercase and one uppercase letter, and be at least 8 characters long.");
+          return false;
+        }
+        
+       
+        if (password != confirm_password) {
+          alert("Passwords do not match.");
+          return false;
+        }
+        
+        
+        alert("Form submitted successfully.");
+        return true;
+      }
+      
+    </script>
+  
+    
+</body>
+
+</html>

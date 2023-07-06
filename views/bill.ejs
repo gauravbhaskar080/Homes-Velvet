@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Velvet Homes</title>
+    <script defer src="https://friconix.com/cdn/friconix-0.2538.js"> </script>
+    <link rel="icon" type="image/x-icon" href="/photos/logo.jpeg">
+    <link rel="stylesheet" href="/css/bill.css">
+    <link rel="stylesheet" href="/navbar.css">
+    <link rel="stylesheet" href="/footer.css">
+</head>
+
+<body>
+    <%- include('header') %>
+    <% let srno=0 %>
+        <% let del=0 %>
+            <% let dis=100 %>
+                <div class="bil-con">
+                    <div class="bil-head">
+                        <div class="title" style="width: 10%;">Sr. No.</div>
+                        <div class="title" style="width: 50%;">Products</div>
+                        <div class="title" style="width: 10%;">Qty</div>
+                        <div class="title" style="width: 10%;">Rate</div>
+                        <div class="title" style="width: 20%;">Cost</div>
+                    </div>
+                    <div class="bil-main">
+                        <div class="srno">
+                            <%= srno+1 %>
+                                <% srno=srno + 1 %>
+                        </div>
+                        <div class="prdes">
+                            <img src="<%= prd.dispimg %>" alt="">
+                            <%= prd.title %>
+                        </div>
+                        <div class="qty">
+                            <%= 1 %>
+                        </div>
+                        <div class="rate">
+                            <%= prd.price %>
+                        </div>
+                        <div class="subt">
+                            <%= prd.price %>
+                        </div>
+                    </div>
+                    <div class="total">
+                        <div class="ttl">Delivery Charge</div>
+                        <div class="pr">
+                            <%= del %>
+                        </div>
+                    </div>
+                    <div class="total">
+                        <div class="ttl">Discount</div>
+                        <div class="pr">
+                            - <%= dis %>
+                        </div>
+                    </div>
+                    <div class="total">
+                        <div class="ttl">Total :- </div>
+                        <div class="pr">Rs.
+                            <%= prd.price + del -dis %>/-
+                        </div>
+                    </div>
+                    <a href="">
+                        <form action="/velvethomes/placeorder/singleprod/<%= prd._id %>" method="post">
+                            <button class="btn">Place Order</button>
+                        </form>
+                    </a>
+                </div>
+                <%- include('footer') %>
+    <script src="/navbar.js"></script>
+</body>
+
+</html>

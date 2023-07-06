@@ -1,0 +1,54 @@
+<%- include('tophead') %>
+    <link rel="stylesheet" href="/product.css">
+</head>
+
+<body>
+    <div class="main">
+        <div class="images">
+
+            <div class="dispbig-con">
+                <div class="image-container">
+                    <img src="<%= product.dispimg %>" class="dispbig mySlides" alt="">
+                    <button class="button black display-left" onclick="plusDivs(-1)">&#10094;</button>
+                    <button class="button black display-right" onclick="plusDivs(1)">&#10095;</button>
+                  </div> 
+            </div>
+            <div class="smlpic">
+                <% for(let image of product.images){ %>
+                    <img src="<%= image %>" alt="">
+                    <% } %>
+            </div> 
+        </div>
+        <div class="content">
+            <div class="title">
+                <%= product.title %>
+            </div>
+            <div class="con">
+                <div class="d-title">Price:</div>
+                <div class="d-value">Rs. <div class="pri">
+                        <%= product.price %>/-
+                    </div>
+                </div>
+            </div>
+            <div class="con">
+                <p class="d-title">Product Description: </p>
+                <p class="d-value">
+                    <%= product.description %>
+                </p>
+            </div>
+            <div class="bttns-con">
+                <div class="bttns">
+                    <a href="/velvethomes/bill/<%= product._id %>">
+                        <div class="btn-bn">Buy Now</div>
+                </div>
+                <div class="bttns">
+                    <form action="/velvethomes/addtocart/<%= product._id %>" method="post">
+                        <button class="btn-ac">Add To Cart</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="/js/product.js"></script>
+    <%- include('footer') %>
+    <script src="/navbar.js"></script>

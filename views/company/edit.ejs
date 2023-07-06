@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Velvet Homes</title>
+    <link rel="icon" type="image/x-icon" href="/photos/logo.jpeg">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        body {
+            background-color: #ffcc99;
+        }
+
+        .navbar {
+            position: fixed;
+            display: flex;
+            flex-wrap: wrap;
+            font-size: xx-large;
+            justify-content: space-evenly;
+            height: 65px;
+            align-items: center;
+            background-color: #996633;
+            border-bottom: 3px solid gold;
+            border-top: 3px solid gold;
+            width: 100%;
+            transition: 0.1s;
+        }
+
+        .obj {
+            background-color: #eaac6e;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            border-radius: 10px;
+            height: 40px;
+        }
+
+        .obj:hover {
+            background-color: #d2a67a;
+        }
+
+        .navbar a {
+            width: 18%;
+            color: #fff;
+        }
+
+        .home {
+            width: 100%;
+            background-color: #3891e4;
+            height: 50px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 10px;
+            font-size: x-large;
+            color: silver;
+            border: 2px solid #2687e2;
+        }
+
+        .home:hover {
+            background-color: #469bea;
+        }
+
+        .homecon {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            padding-top: 90px;
+        }
+
+        .homecon a {
+            width: 60%;
+        }
+
+        .form-con {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+            margin-left: 1%;
+
+        }
+
+        .input-form {
+            /* background-color: #FFF; */
+            /* background-color: rgba(255, 255, 255, 0.3); */
+            /* backdrop-filter: blur(2px); */
+            width: 100%;
+            min-height: 700px;
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            align-items: center;
+            border: 2px solid #4c2b1c;
+            border-radius: 10px;
+            margin-bottom: 50px;
+            background-color: #e9a25b;
+            margin: 2%;
+        }
+
+        .input-form div {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        input {
+            background-color: rgba(255, 255, 255, 0.4);
+            width: 80%;
+            height: 30px;
+            margin: 2px 0;
+            /* border: 2px solid #24a0ed; */
+            border: none;
+            font-size: larger;
+            border-radius: 5px;
+            color: saddlebrown;
+            text-align: center;
+        }
+
+        textarea {
+            background-color: rgba(255, 255, 255, 0.4);
+            width: 80%;
+            border: none;
+            border-radius: 5px;
+            color: saddlebrown;
+            font-size: larger;
+            text-align: center;
+        }
+
+        label {
+            font-size: larger;
+            /* color: rgb(51, 133, 23); */
+            color: #F5EBE0;
+            margin: 5px;
+            font-weight: bold;
+        }
+        .labelimg {
+            font-size: larger;
+            /* color: rgb(51, 133, 23); */
+            color: #F5EBE0;
+            margin: 5px;
+            font-weight: bold;
+            text-align: left;
+            margin-left: 30px;
+        }
+        .label-con {
+            margin: 2px;
+        }
+
+        button {
+            margin-top: 5px;
+            width: 50%;
+            height: 35px;
+            background-color: #4c2b1c;
+            border-radius: 10px;
+            border: 2px solid #4c2b1c;
+            color: silver;
+            font-size: larger;
+            margin-bottom: 30px;
+        }
+
+        .gh {
+            display: inline;
+        }
+
+        .button1 {
+
+            width: 50%;
+            height: 35px;
+            background-color: #4c2b1c;
+            border-radius: 10px;
+            border: 2px solid #4c2b1c;
+            color: rgb(255, 255, 255);
+            font-size: larger;
+        }
+
+        .in {
+            /* border: 2px solid black; */
+
+            display: flex;
+        }
+
+        .disp {
+            width: 100%;
+            background-color: #e9a25b;
+            border-radius: 10px;
+            border: 2px solid;
+            margin: 2%;
+            text-align: center;
+        }
+
+        .images {
+            height: 50%;
+            width: 50%;
+        }
+
+        .company-edit {
+            display: flex;
+            flex-wrap: nowrap;
+        }
+
+        .newdiv {
+            margin: 1%;
+        }
+
+        #tit {
+            margin-top: 9%;
+        }
+        .show{
+            color: #4c2b1c;
+        }
+        .new-input{
+            width: 500px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="navbar" id="nav">
+        <a href="/seller/<%= company._id %>/tile">
+            <div class="obj">Tiles</div>
+        </a>
+        <a href="/seller/<%= company._id %>/furniture">
+            <div class="obj">Furniture</div>
+        </a>
+        <a href="/seller/<%= company._id %>/sanitary">
+            <div class="obj">Sanitary</div>
+        </a>
+        <a href="/seller/<%= company._id %>/artifact">
+            <div class="obj">Artifacts</div>
+        </a>
+        <a href="/seller/<%= company._id %>/paint">
+            <div class="obj">Paints</div>
+        </a>
+    </div>
+    <div class="homecon">
+        <a href="/seller/<%= company._id %>">
+            <div class="home">Go To Home Page</div>
+        </a>
+    </div>
+       <div class="company-edit">
+        <div class="form-con">
+            <form action="/seller/updateprod/<%= product._id %>" method="post" class="input-form">
+                <div class="label-con">
+                    <label for="title">Title Of the Product : </label>
+                </div>
+                <div>
+                    <input type="text" id="title" name="title" value="<%= product.title %>">
+                </div>
+
+                <div class="label-con">
+                    <label for="price">Price In Rs. : </label>
+                </div>
+                <div>
+                    <input type="number" name="price" id="price" value="<%= product.price %>">
+                </div>
+                <div class="label-con">
+                    <label for="description">Description of The Product : </label>
+                </div>
+                <div>
+                    <textarea name="description" id="description" cols="30" rows="5"><%= product.description %></textarea>
+                </div>
+                <div class="label-con">
+                    <label for="dispimg">Display Image of The Product : </label>
+                </div>
+                <div>
+                    <input type="text" name="dispimg" id="dispimg" value="<%= product.dispimg %>">
+                </div>
+                <div class="label-con">
+                    <label for="">Images Of The Product : </label>
+                </div>
+                
+                <% for(let image of product.images){ %>
+                    <div>
+                        <input type="text" value="<%= image %>">
+                    </div>
+                    <% } %>
+                    
+                        <button>Update</button>
+            </form>
+        </div>
+
+        <div class="disp">
+            <div class="newdiv label-con" id="tit"> <label for="">Title: <span class="show"><input type="text"
+                placeholder="Your Title will appear here"></span> </label>
+            </div>
+
+            <div class="newdiv label-con" id="pri"> <label for="">Price: <span class="show"><input type="text"
+                        placeholder="Price of product will appear here"></span></label>
+            </div>
+
+            <div class="newdiv" id="des"> <label for="">Description: <span class="show"><input type="text" placeholder="Description of product will appear here"></span></label>
+            </div>
+            <div class="labelimg">Display Image: </div>
+            <div class="newdiv label-con images" alt="Product Image" id="isimg"> <label for=""> <span class="show"><input class="new-input" type="text"
+                placeholder="Your display image will appear here"></span></label>
+            </div>
+            <div class="gh">
+                <form action="/seller/<%= product._id %>/addimg" method="post">
+                    <input type="text" name="img" placeholder="Enter URL">
+                    <button class="button1">Add Image</button>
+                </form>
+            </div>
+        </div>
+    </div>
+ 
+</body>
+<script>
+    window.onscroll = function () { scrollFunction() };
+
+    function scrollFunction() {
+        if (document.body.scrollTop > 25 || document.documentElement.scrollTop > 25) {
+            document.getElementById("nav").style.height = "50px";
+        } else {
+            document.getElementById("nav").style.height = "65px";
+        }
+    }
+    // Get the form inputs
+    const titleInput = document.getElementById('title');
+    const dispImgInput = document.getElementById('dispimg');
+    const priceInput = document.getElementById('price');
+    const descriptionInput = document.getElementById('description');
+
+    // Get the display elements
+    const titleDisp = document.getElementById('tit');
+    const priceDisp = document.getElementById('pri');
+    const desDisp = document.getElementById('des');
+    const imgDisp = document.getElementById('isimg');
+
+    // Listen for changes in the form inputs
+    titleInput.addEventListener('input', () => {
+        titleDisp.querySelector('span').innerText = `${titleInput.value}`;
+        titleDisp.classList.add('active');
+    });
+
+    dispImgInput.addEventListener('input', () => {
+        // Update the display image
+        imgDisp.innerHTML = `<img src="${dispImgInput.value}" class="images" alt="Product Image">`;
+
+        
+        imgDisp.classList.add('active');
+    });
+
+    priceInput.addEventListener('input', () => {
+        priceDisp.querySelector('span').innerText = `${priceInput.value}`;
+        priceDisp.classList.add('active');
+    });
+
+    descriptionInput.addEventListener('input', () => {
+        desDisp.querySelector('span').innerText = `${descriptionInput.value}`;
+        desDisp.classList.add('active');
+    });
+
+</script>
+
+</html>

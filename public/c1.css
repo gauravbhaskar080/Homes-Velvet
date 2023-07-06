@@ -1,0 +1,330 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    /* background-image: url('https://assets-global.website-files.com/63113e7a3585f73efe438e9e/63113e7a3585f71eec43931c_shutterstock_1998600422-1370x652.jpeg'); */
+    background-color: #ffcc99;
+    /* background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: 100% 100%; */
+}
+h1{
+    margin: 20px 0;
+    width: 100%;
+    color: Gold;
+    height: 90px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#logo{
+    height: 50px;
+    width: 70px;
+}
+a{
+    text-decoration: none;
+}
+.navbar{
+    position: fixed;
+    display: flex;
+    flex-wrap: wrap;
+    font-size: xx-large;
+    justify-content: space-evenly;
+    height: 65px;
+    align-items: center;
+    background-color: #996633;
+    border-bottom: 3px solid gold;
+    border-top: 3px solid gold;
+    width: 100%;
+    transition: 0.1s;
+}
+.obj{
+    background-color: #eaac6e;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    border-radius: 10px;
+    height: 40px;
+}
+.obj:hover{
+    background-color: #d2a67a;
+}
+.navbar a{
+    width: 18%;
+    color: #fff;
+}
+.company-name{
+    color: #4c2b1c;
+    text-align: center;
+    font-size: 40px;
+    margin-top: 0px;
+}
+.products{
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
+.object{
+    width: 100%;
+    /* margin: 2px; */
+    margin-top: 10px;
+    background-color: silver;
+}
+.object img{
+    height: 200px;
+    width: 200px;
+}
+
+.card{
+    background-color: rgb(233, 166, 119);
+    width: 15rem;
+    margin: 10px;
+    /* margin: 2px; */
+    /* background-color: #333; */
+    border-radius: 7px;
+    /* border: 1px solid #999;
+    border-radius: 10px; */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    height: 325px;
+    transition: transform 0.5s;
+    margin-right: 15px;
+    margin-bottom: 50px;
+    border: 1.5px solid rgb(169, 115, 77);
+    box-shadow: 5px 7px 10px rgba(0,0,0,0.6);
+}
+.card:hover{
+    transform: scale(1.05);
+}
+.card-img-top{
+    /* width: 13rem; */
+    width: 100%;
+    height: 190px;
+    border-top-right-radius: 5px;
+    border-top-left-radius: 5px;
+    /* padding: 2px; */
+}
+.card-body{
+    height: 40px;
+    width: 9rem;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    margin-bottom: 10px;
+}
+.btn{
+    margin-top: 15px;
+    margin-left: 20px;
+    height: 40px;
+    border: 2px solid #24a0ed;
+    background-color: #24a0ed;
+    font-size: x-large;
+    color: white;
+    width: 7rem;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+.btn:hover{
+    background-color: rgba(36, 160, 237,0.8);
+}
+.product-title{
+    margin-top: 5px;
+    font-size: larger;
+    color: black;
+}
+h3{
+    font-size: xx-large;
+    color: #4c2b1c;
+    text-align: center;
+    margin: 20px;
+    padding-left: 20px;
+    text-decoration: underline;
+}
+.important{
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
+.totalbus {
+    width: 450px;
+    height: 250px;
+    background-image: url('https://w0.peakpx.com/wallpaper/146/516/HD-wallpaper-black-texture-with-purple-neon-lines-black-abstract-background-purple-neon-lines-3d-black-background-3d-polygons-texture.jpg');
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    border-radius: 15px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: flex-start;
+    flex-direction: column;
+    margin-top: 15px;
+    box-shadow: 8px 10px 10px rgba(0, 0, 0, 0.621);
+}
+.totalbus:nth-of-type(2) {
+    background-image: url('https://img.freepik.com/premium-vector/tech-dark-design-with-perforated-metal-texture_43969-796.jpg');
+}
+
+.totalbus:nth-of-type(3) {
+    background-image: url('https://images.unsplash.com/photo-1636953056323-9c09fdd74fa6?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxleHBsb3JlLWZlZWR8MXx8fGVufDB8fHx8&w=1000&q=80');
+}
+.tex-title {
+    font-size: 30px;
+    color: silver;
+    margin: 10px;
+    /* color: #fff; */
+}
+
+.tex-con {
+    font-size: 40px;
+    color: silver;
+    /* color: #fff; */
+    text-align: center;
+    margin: 10px;
+}
+
+.add {
+    font-size: 30px;
+    color: silver;
+    /* color: #fff; */
+}
+
+.strip {
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.strip img {
+    height: 50px;
+    width: 50px;
+    border-radius: 5px;
+    margin: 0 30px;
+}
+
+.master {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    height: 50px;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.master img {
+    width: 100px;
+    height: 90%;
+    margin-right: 20px;
+}
+
+.accnum {
+    margin-left: 20px;
+    font-size: larger;
+    color: silver;
+}
+@media(max-width: 501px) {
+            .totalbus {
+                width: 80%;
+            }
+        }
+
+        @media(max-width: 281px) {
+            .totalbus {
+                height: 300px;
+            }
+        }
+@media (max-width : 400px) {
+    .master {
+        display: none;
+    }
+}
+.btn-11 {
+    border: none;
+    background: rgb(251,33,117);
+      background: linear-gradient(0deg, rgba(251,33,117,1) 0%, rgba(234,76,137,1) 100%);
+      color: #fff;
+      overflow: hidden;
+  }
+  .btn-11:hover {
+      text-decoration: none;
+      color: #fff;
+  }
+  .btn-11:before {
+      position: absolute;
+      content: '';
+      display: inline-block;
+      top: -180px;
+      left: 0;
+      width: 30px;
+      height: 100%;
+      background-color: #fff;
+      animation: shiny-btn1 3s ease-in-out infinite;
+  }
+  .btn-11:hover{
+    opacity: .7;
+  }
+  .btn-11:active{
+    box-shadow:  4px 4px 6px 0 rgba(255,255,255,.3),
+                -4px -4px 6px 0 rgba(116, 125, 136, .2), 
+      inset -4px -4px 6px 0 rgba(255,255,255,.2),
+      inset 4px 4px 6px 0 rgba(0, 0, 0, .2);
+  }
+  
+  
+  @-webkit-keyframes shiny-btn1 {
+      0% { -webkit-transform: scale(0) rotate(45deg); opacity: 0; }
+      80% { -webkit-transform: scale(0) rotate(45deg); opacity: 0.5; }
+      81% { -webkit-transform: scale(4) rotate(45deg); opacity: 1; }
+      100% { -webkit-transform: scale(50) rotate(45deg); opacity: 0; }
+  }
+  
+  .custom-btn {
+    width: 130px;
+    height: 40px;
+    color: #fff;
+    border-radius: 10px;
+    padding: 10px 25px;
+    font-family: 'Lato', sans-serif;
+    font-weight: 500;
+    background: transparent;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    display: inline-block;
+     box-shadow:inset 2px 2px 2px 0px rgba(255,255,255,.5),
+     7px 7px 20px 0px rgba(0,0,0,.1),
+     4px 4px 5px 0px rgba(0,0,0,.1);
+    outline: none;
+    margin-top: 1%;
+    margin-left: 37%;
+      margin-right: auto;
+      margin-bottom: 20px;
+      width: 26%;
+      height: 50px;
+      font-size: 25px;
+      background-color: #119af0;
+  } 
+  .btn-logout-con{
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    padding-top: 80px;
+  }
+  .btn-logout{
+    width: 100px;
+    background-color: #4c2b1c;
+    height: 40px;
+    color: #EEE;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 30px;
+    margin-right: 20px;
+    font-size: larger;
+  }
