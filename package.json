@@ -17,6 +17,7 @@
     "express-session": "^1.17.3",
     "method-override": "^3.0.0",
     "mongoose": "^6.10.5",
+    "nodemon": "^2.0.22",
     "path": "^0.12.7"
   }
 }
